@@ -24,3 +24,18 @@ $ git clone https://github.com/kozlovaa1/akdev.twilio.git
 ```
 https://my-site.ru/bitrix/admin/partner_modules.php?lang=ru
 ```
+
+## Использование
+Создаём почтовый шаблон, полностью соответствующий [согласованному шаблону](https://console.twilio.com/us1/develop/sms/senders/whatsapp-templates/) в Twilio.
+Используем данные шаблона:
+
+`$template` - ID шаблона
+
+`$data` - массив данных для шаблона в формате
+```
+['FIELD_NAME' = $fieldValue, 'OTHER_FIELD_NAME' = $otherFieldValue, ...]
+```
+Выполняем отправку сообщения по созданному почтовому шаблону:
+```
+Akdev\Twilio\TwilioSender::sendMessage($template, $data);
+```
