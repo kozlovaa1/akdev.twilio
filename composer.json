@@ -1,0 +1,14 @@
+{
+    "name": "ak-dev/akdev.twilio",
+    "description": "Модуль для CMS Битрикс. Отправка сообщений в Whatsapp через сервис Twilio с использованием почтовых шаблонов",
+    "type": "bitrix-module",
+    "require": {
+        "twilio/sdk": "^6.44"
+    },
+    "authors": [
+        {
+            "name": "Andrey Kozlov",
+            "email": "i@kozlovaa.ru"
+        }
+    ]
+}
