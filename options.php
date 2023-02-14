@@ -19,13 +19,11 @@ $options = [
             [
                 'group' => 'Twilio API',
             ],
-            'name1' => 'TWILIO_ACCOUNT_SID',
             [
                 'name' => 'TWILIO_ACCOUNT_SID',
                 'label' => 'TWILIO_ACCOUNT_SID',
                 'type' => 'text',
             ],
-            'name2' => 'TWILIO_AUTH_TOKEN',
             [
                 'name' => 'TWILIO_AUTH_TOKEN',
                 'label' => 'TWILIO_AUTH_TOKEN',
@@ -34,22 +32,19 @@ $options = [
             [
                 'group' => 'Номера телефонов',
             ],
-            'name3' => 'Номер телефона отправителя',
             [
 				'name' => 'TWILIO_SENDER',
-                'label' => 'TWILIO_SENDER',
+                'label' => 'Номер телефона отправителя',
                 'type' => 'text',
 			],
-            'name4' => 'Режим тестирования (все сообщения отправляются тестовому получателю)',
             [
 				'name' => 'TWILIO_TEST_MODE',
-                'label' => 'TWILIO_TEST_MODE',
+                'label' => 'Режим тестирования (все сообщения отправляются тестовому получателю)',
                 'type' => 'checkbox',
 			],
-            'name5' => 'Номер телефона тестового получателя',
             [
 				'name' => 'TWILIO_RECIPIENT',
-                'label' => 'TWILIO_RECIPIENT',
+                'label' => 'Номер телефона тестового получателя',
                 'type' => 'text',
 			],
         ],
