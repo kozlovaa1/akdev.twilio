@@ -19,12 +19,17 @@ class TwilioSender
     /**
      * @throws TwilioException
      */
-    public static function sendMessage($template, $data): void
+    public static function sendMessage($template, $data, $recipient): void
     {
         try {
             $request['message'] = self::getTemplate($template, $data);
+            $mid = pathinfo(dirname(__DIR__))['basename'];
+            $twilioTestMode = Option::get($mid, 'TWILIO_TEST_MODE');
+            if ($twilioTestMode === 'Y') {
+                $recipient = Option::get($mid, 'TWILIO_RECIPIENT');
+            }
 
-            $request['to'] = str_replace(array(' ', '(', ')', '-'), '', $data['PHONE']);;
+            $request['to'] = str_replace(array(' ', '(', ')', '-'), '', $recipient);;
             self::sendRequest($request);
         } catch (ObjectPropertyException|ArgumentException|StopException|SystemException $e) {
             // TODO возврат ошибки
