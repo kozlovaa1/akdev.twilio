@@ -66,7 +66,7 @@ class TwilioSender
      * @return string|null
      * @throws ObjectPropertyException|ArgumentException|SystemException|StopException
      */
-    private static function getTemplate(int $template, array $data): string|null
+    private static function getTemplate(int $template, array $data): ?string
     {
         $data['DEFAULT_EMAIL_FROM'] = Config\Option::get("main", "email_from", "admin@" . $GLOBALS["SERVER_NAME"]);
 
