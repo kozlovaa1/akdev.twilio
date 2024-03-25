@@ -92,13 +92,11 @@ class TwilioSender
                 return $result['BODY'];
             } catch (StopException $e) {
                 // обработка ошибки компиляции почтового сообщения
-                Debug::writeToFile(__FILE__ . ':' . __LINE__ . "\n(" . date('Y-m-d H:i:s') . ")\n" . print_r($e->getMessage(), TRUE) . "\n\n", '', 'log/__debug.log');
                 return null;
             }
 
         } catch (ObjectPropertyException|ArgumentException|SystemException $e) {
             // обработка ошибочного ID шаблона
-            Debug::writeToFile(__FILE__ . ':' . __LINE__ . "\n(" . date('Y-m-d H:i:s') . ")\n" . print_r($e->getMessage(), TRUE) . "\n\n", '', 'log/__debug.log');
             return null;
         }
 
